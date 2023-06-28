@@ -1,3 +1,5 @@
+const User = require('../../models/User')
+
 const user = async()=>{
 
     const userCreate = {
@@ -8,7 +10,7 @@ const user = async()=>{
        phone:"1164351302" 
     }
 
-    await user.create(userCreate)
+    await User.create(userCreate)
 
 }
 
