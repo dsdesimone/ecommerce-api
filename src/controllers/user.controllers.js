@@ -32,6 +32,7 @@ const update = catchError(async(req, res) => {
 });
 
 const login = catchError(async(req,res)=>{
+    
     const { email, password } = req.body
     const user = await User.findOne({where:{email}})
     if(!user) return res.sendStatus(401)
