@@ -6,7 +6,12 @@ const getAll = catchError(async(req, res) => {
     const {category} = req.query
     const where = {}
     if(category) where.categoryId = category
-    const results = await Product.findAll({include:[Category], where});
+
+    const results = await Product.findAll({
+        include:[Category], 
+        where
+    });
+
     return res.json(results);
 });
 
@@ -38,10 +43,21 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
+const setImages = catchError(async()=>{
+    const {id} = req.params
+    const product = await Product.findByPk(id)
+
+    product.setProductImgs([req.body])
+    const images = product.getProductImgs()
+
+    return res.json(images)
+})
+
 module.exports = {
     getAll,
     create,
     getOne,
     remove,
-    update
+    update,
+    setImages
 }
