@@ -18,8 +18,8 @@ Cart.belongsTo(Product)
 Product.hasMany(Cart)
 
 //Purchase -> //productId
-Purchase.belongsTo(User)
-User.hasMany(Purchase)
+Purchase.belongsTo(Product)
+Product.hasMany(Purchase)
 
 //Purchase -> //userId
 Purchase.belongsTo(User)

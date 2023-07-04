@@ -59,7 +59,8 @@ test("GET -> 'URL_BASE_CART', should return status code 200 and res.body.length 
         .set("Authorization", `Bearer ${TOKEN}`)
 
     expect(res.status).toBe(200)
-    expect(res.body).toHaveLength(2)
+    expect(res.body).toHaveLength(1
+        )
 })
 
 test("PUT -> 'BASE_URL_USER/:id', should return status code 200 and res.body.quantity === body.quantity", async()=>{

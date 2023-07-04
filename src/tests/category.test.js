@@ -30,7 +30,6 @@ test("POST -> 'BASE_URL', should return status code 201 and res.body.name === bo
         .send(category)
         .set("Authorization", `Bearer ${TOKEN}`)
 
-    console.log(TOKEN)
 
     categoryId = res.body.id
 

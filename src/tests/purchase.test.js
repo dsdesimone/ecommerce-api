@@ -47,7 +47,7 @@ test("POST -> 'BASE_URL_PURCHASE', should return status code 201 and res.body.qu
         .set("Authorization", `Bearer ${TOKEN}`)
 
     expect(res.status).toBe(201)
-    expect(res.body[0].quantity.toBe(cartBody.quantity))
+    expect(res.body[0].quantity).toBe(cartBody.quantity)
 })
 
 test("GET -> 'BASE_URL_PURCHASE', should return status code 200 and res.body.length === 1", async()=>{
